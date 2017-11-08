@@ -1,7 +1,10 @@
 require 'rails_helper'
 
 describe "New author page", type: :feature do
-  
+  first_name = 'Alan'
+  last_name = 'Turing'
+  homepage = 'http://wikipedia.org/Alan_Turing'
+
   it "should render withour error" do
     visit new_author_path
   end
@@ -20,4 +23,16 @@ describe "New author page", type: :feature do
     expect(page).to have_css('input[type="submit"]')
   end
 
+  it "should save data in the database " do
+    visit new_author_path
+
+    fill_in 'author_first_name', :with => first_name
+    fill_in 'author_last_name', :with => last_name
+    fill_in 'author_homepage', :with => homepage
+    find('input[type="submit"]').click
+
+    #expec(Author.where(first_name: 'Alan', last_name:'turing', homepage: 'http://wikipedia.org/Alan_Turing'))
+    Author.find(:conditions => ["first_name = 'Alan' AND last_name = 'Turing' AND homepage = 'http://wikipedia.org/Alan_Turing'"])
+    
+  end
 end
