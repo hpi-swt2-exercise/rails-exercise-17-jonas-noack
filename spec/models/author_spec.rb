@@ -10,6 +10,8 @@ describe "New author model", type: :model do
     expect(author.last_name).to eq("Turing")
     expect(author.homepage).to eq("http://wikipedia.org/Alan_Turing")
     
+    expect(author.name).to eq("Alan Turing")
+
   end
 
 end
