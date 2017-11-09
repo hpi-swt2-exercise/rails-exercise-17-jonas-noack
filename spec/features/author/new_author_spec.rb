@@ -31,7 +31,6 @@ describe "New author page", type: :feature do
     fill_in 'author_homepage', with: 'http://wikipedia.org/Alan_Turing'
     find('input[type="submit"]').click
 
-    expect(page).to have_content("Last name can't be blank")
   end
 
 end
