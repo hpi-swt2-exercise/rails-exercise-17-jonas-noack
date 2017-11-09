@@ -26,8 +26,14 @@ class AuthorsController < ApplicationController
     if @author.update(author_params)
       redirect_to @author
     else
-      render 'edit'
+      render 'edit'   
     end
+  end
+  def destroy
+    @author = Article.find(params[:id])
+    @author.destroy
+   
+    redirect_to author_path
   end
 
   private
