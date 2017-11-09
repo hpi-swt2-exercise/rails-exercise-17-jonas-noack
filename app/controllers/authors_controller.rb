@@ -32,7 +32,6 @@ class AuthorsController < ApplicationController
   def destroy
     @author = Article.find(params[:id])
     @author.destroy
-   
     redirect_to author_path
   end
 
