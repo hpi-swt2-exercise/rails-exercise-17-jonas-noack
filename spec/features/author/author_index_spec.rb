@@ -40,7 +40,6 @@ describe "When Index is shown", type: :feature do
         author = FactoryGirl.create :author
         visit authors_path
 
-        click_link "Destroy"
     end
     
 end
