@@ -35,5 +35,12 @@ describe "When Index is shown", type: :feature do
 
         expect(page).to have_link("Edit")
     end
+
+    it "should support deleting authors" do
+        author = FactoryGirl.create :author
+        visit authors_path
+
+        expect(page).to have_link("Destroy")
+    end
     
 end
