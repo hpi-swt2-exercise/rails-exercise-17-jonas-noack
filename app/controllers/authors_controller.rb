@@ -30,7 +30,7 @@ class AuthorsController < ApplicationController
     end
   end
   def destroy
-    @author = Article.find(params[:id])
+    @author = Author.find(params[:id])
     @author.destroy
     redirect_to author_path
   end
