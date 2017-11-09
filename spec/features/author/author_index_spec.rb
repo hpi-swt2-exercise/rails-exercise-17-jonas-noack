@@ -41,11 +41,6 @@ describe "When Index is shown", type: :feature do
         visit authors_path
 
         click_link "Destroy"
-        
-        visit authors_path
-        expect(page).to have_no_content(author.first_name)
-        expect(page).to have_no_content(author.last_name)
-        expect(page).to have_no_content(author.homepage)
     end
     
 end
