@@ -14,8 +14,12 @@ describe "When Index is shown", type: :feature do
         expect(page).to have_text(alan.homepage)
         expect(page).to have_css("th", :text => "Homepage")
         expect(page).to have_css("th", :text => "Name")
-        
-        
+              
+    end
+
+    it "should show link to new author" do
+        visit authors_path
+        expect(page).to have_css("a", :text => "Add author")
     end
     
 end
