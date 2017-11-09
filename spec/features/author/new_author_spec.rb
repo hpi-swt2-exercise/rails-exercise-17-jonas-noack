@@ -31,7 +31,7 @@ describe "New author page", type: :feature do
     fill_in 'author_homepage', :with => homepage
     find('input[type="submit"]').click
 
-    #expect(Author.where(first_name: 'Alan', last_name:'Turing', homepage: 'http://wikipedia.org/Alan_Turing')).to exist
+    ##expect(Author.where(first_name: 'Alan', last_name:'Turing', homepage: 'http://wikipedia.org/Alan_Turing')).to exist
     #Author.find(:conditions => ["first_name = 'Alan' AND last_name = 'Turing' AND homepage = 'http://wikipedia.org/Alan_Turing'"])
     
   end
