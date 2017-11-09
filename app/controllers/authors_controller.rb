@@ -6,7 +6,7 @@ class AuthorsController < ApplicationController
     @author = Author.find(params[:id])
   end
   def new
-    @author = Author.new
+    @author = Author.new #why though?
   end
   def create
     @author = Author.new(author_params)
