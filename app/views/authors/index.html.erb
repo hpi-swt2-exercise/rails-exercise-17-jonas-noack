@@ -2,14 +2,15 @@
 <h1>Listing authors</h1>
 
 <table>
- <tr>
+  <tr>
    <th>Name</th>
    <th>homepage</th>
- </tr>
+  </tr>
 
- <% @authors.each do |author| %>
-   <tr>
-     <td><%= author.name %></td>
-   </tr>
- <% end %>
+  <% @authors.each do |author| %>
+    <tr>
+      <td><%= author.name %></td>
+      <td><%= author.homepage %></td>
+    </tr>
+  <% end %>
 </table>
