@@ -14,4 +14,12 @@ describe "New author model", type: :model do
 
   end
 
+  it "shoul have last name" do
+    author = Author.new("first_name" => "Alan","last_name" => "", "homepage" => "http://wikipedia.org/Alan_Turing")
+
+    expect(author).to_not be_valid 
+
+  end
+
+
 end
