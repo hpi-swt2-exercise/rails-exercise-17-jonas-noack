@@ -17,9 +17,16 @@ describe "When Index is shown", type: :feature do
               
     end
 
-    it "should show link to new author" do
+    it "should show link to new author and all authors" do
         visit authors_path
         expect(page).to have_css("a", :text => "Add author")
+    end
+
+    it "should link to author page" do
+        author = FactoryGirl.create :author
+        visit authors_path
+
+        expect(page).to have_link("Show")
     end
     
 end
