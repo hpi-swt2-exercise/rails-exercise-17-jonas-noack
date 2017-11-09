@@ -6,6 +6,8 @@ describe "Edit author page", type: :feature do
         author = FactoryGirl.create :author
         visit edit_author_path(author)
         
+        fill_in 'Last name', with: 'Torengo'
+        find('input[type="submit"]').click
     end
 
 end
