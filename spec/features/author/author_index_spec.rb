@@ -13,7 +13,7 @@ describe "When Index is shown", type: :feature do
         expect(page).to have_text(alan.name)
         expect(page).to have_text(alan.homepage)
         expect(page).to have_css("th", :text => "homepage")
-        expect(page).to have_css("th", :text => "name")
+        expect(page).to have_css("th", :text => "Name")
         
         
     end
