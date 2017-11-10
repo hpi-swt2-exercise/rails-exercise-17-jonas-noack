@@ -1,6 +1,7 @@
 class PapersController < ApplicationController
   def index
-    @papers = Paper.all
+    year = params[:year]
+    @papers = Paper.published_in(year)
   end
 
   def show
