@@ -29,13 +29,14 @@
     </p>
 
     <p>
-        <% authors = Author.all %>
-         <% for i in  1..5 %>
-             <p>
-                 <%= f.label "Author #{i}", for: "paper_author_id_#{i}" %>
-                 <%= f.collection_select :author_ids, authors, :id, :name, {selected: @paper.author_ids[i - 1]}, {name: "paper[author_ids][]", id: "paper_author_id_#{i}"} %>
-             </p>
-         <% end %>
+     <% for i in 1..5 do %>
+          <%= f.label 'Author ' + i.to_s, for: 'paper_author_id_' + i.to_s %>
+          <% selected = @paper.authors[i - 1] ? @paper.authors[i - 1].id : nil %>
+          <%= f.collection_select :author, Author.all, :id, :name,
+                                  {selected: selected, include_blank: '(none)'},
+                                  {name: "paper[author_ids][]", id: "paper_author_id_" + i.to_s} %>
+          <br />
+      <% end %>
     </p>
     
     <p>
