@@ -12,3 +12,15 @@
   <strong>Homepage:</strong>
   <%= @author.homepage %>
 </p>
+
+<table>
+  <tr>
+    <th>Authors</th>
+  </tr>
+
+  <% @author.papers.each do |paper| %>
+    <tr>
+      <td><%= paper.title %></td>
+    </tr>
+  <% end %>
+</table>
