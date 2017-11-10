@@ -12,3 +12,15 @@
   <strong>Year:</strong>
   <%= @paper.year %>
 </p>
+
+<table>
+  <tr>
+    <th>Authors</th>
+  </tr>
+
+  <% @papers.authors.each do |author| %>
+    <tr>
+      <td><%= paper.name %></td>
+    </tr>
+  <% end %>
+</table>
