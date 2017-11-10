@@ -6,6 +6,8 @@ class Author < ActiveRecord::Base
   def name
     if last_name?
       first_name + " " + last_name
+    else
+      first_name
     end
   end
 end
