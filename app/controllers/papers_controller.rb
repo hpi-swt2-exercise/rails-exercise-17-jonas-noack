@@ -5,6 +5,7 @@ class PapersController < ApplicationController
 
   def show
     @paper = Paper.find(params[:id])
+    @authors = Author.all
   end
 
   def new
